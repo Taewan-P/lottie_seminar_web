@@ -1,1 +1,45 @@
 <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>TEST</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+</head>
+
+<body>
+    <section class="chaeyeon-lottie">
+        <div id="lottie-container" class="cy-lottie-container">
+            <lottie-player id="chaeyeon" src="/static/lottie/chaeyeon.json">"></lottie-player>
+        </div>
+        <div id="scroll-lottie-container" class="scroll-container">
+            <div id="tmp-lottie-container" class="sticky-text-container">
+            </div>
+        </div>
+
+    </section>
+    <script>
+        LottieInteractivity.create({
+            mode:"scroll",
+            container: '#tmp-lottie-container',
+            player:'#chaeyeon',
+            actions: [
+                {
+                    visibility: [0,0.7],
+                    type: "seek",
+                    frames: [0, 79]
+                },
+                {
+                    visibility: [0.7,1],
+                    type: "stop",
+                    frames: [78]
+                }
+
+            ]
+        });
+    </script>
+</body>
+</html>
